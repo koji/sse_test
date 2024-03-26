@@ -19,6 +19,9 @@ yarn dev
 
 requirements.txt is dumped my pip list so there might be unrelated packages.
 
+sse-starlette  
+https://pypi.org/project/sse-starlette/
+
 ```shell
 pip install -r requirements txt
 uvicorn app:app --reload
