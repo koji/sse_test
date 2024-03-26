@@ -2,7 +2,7 @@
 
 ## frontend
 
-js + vite + sse for server-sent-event
+js + vite + chakra-ui + sse for server-sent-event
 
 ```shell
 cd fe
