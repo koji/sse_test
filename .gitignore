@@ -1,0 +1,5 @@
+be/.env
+be/__pycache__
+.DS_Store
+
+fe/node_modules
