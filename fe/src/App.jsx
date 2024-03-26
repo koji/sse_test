@@ -20,35 +20,10 @@ function App() {
     if (prompt !== "") {
       setIsLoading(true);
       setResult("");
-      // const url = 'https://api.openai.com/v1/completions'
-      // const url = "https://api.openai.com/v1/completions";
       const url = "http://localhost:8000/streaming/ask";
-      // const url = 'https://api.openai.com/v1/chat/completions'
-      const data = {
-        // model: "gpt-3.5-turbo-instruct",
-        query: prompt,
-        // model: 'gpt-3.5-turbo',
-        // messages: [
-        //   {
-        //     role: 'system',
-        //     content: 'You are a helpful assistant.',
-        //   },
-        //   {
-        //     role: 'user',
-        //     content: `${prompt}`,
-        //   },
-        // ],
-        // temperature: 0.5,
-        // top_p: 0.95,
-        // max_tokens: 100,
-        // stream: true,
-        // n: 1,
-      };
-
       const source = new SSE(url, {
         headers: {
           "Content-Type": "application/json",
-          // 'Authorization': `Bearer ${API_KEY}`,
         },
         method: "POST",
         payload: JSON.stringify({
@@ -59,13 +34,10 @@ function App() {
       source.addEventListener("message", (e) => {
         if (e.data != "[DONE]") {
           // console.log(e.data);
-          // const payload = JSON.parse(e.data);
           const text = e.data;
-          // const text = payload.choices[0].text;
           if (text != "\n") {
             // console.log(`Text: ${text}`);
             resultRef.current = text;
-            // console.log(`resultRef.current: ${resultRef.current}`);
             setResult(resultRef.current);
           }
         } else {

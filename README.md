@@ -14,6 +14,9 @@ yarn dev
 
 ## backend
 
-```shell
+requirements.txt is dumped my pip list so there might be unrelated packages.
 
+```shell
+pip install -r requirements txt
+uvicorn app:app --reload
 ```
