@@ -2,7 +2,10 @@
 
 ## frontend
 
-js + vite + chakra-ui + sse for server-sent-event
+js + vite + chakra-ui + sse for server-sent-event  
+
+sse.js  
+https://github.com/mpetazzoni/sse.js
 
 ```shell
 cd fe
